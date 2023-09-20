@@ -7,6 +7,7 @@ function Dashboard() {
     name: "",
     timezone: "",
   });
+  const [currentTime, setCurrentTime] = useState("");
 
   useEffect(() => {
     const savedUser = JSON.parse(localStorage.getItem("user"));
@@ -23,9 +24,13 @@ function Dashboard() {
   return (
     <div className="App">
       {user.name ? (
-        <Profile user={user} handleLogout={handleLogout} />
+        <Profile
+          user={user}
+          handleLogout={handleLogout}
+          currentTime={currentTime}
+        />
       ) : (
-        <Home setUser={setUser} />
+        <Home setUser={setUser} setCurrentTime={setCurrentTime} />
       )}
     </div>
   );
