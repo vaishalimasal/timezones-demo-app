@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Profile from "./Profile";
-import Home from "./Home";
+import Home from "./Home/Home";
+import ClayCard from "@clayui/card";
+import ClayButton from "@clayui/button";
 
 function Dashboard() {
   const [user, setUser] = useState({
@@ -30,7 +32,11 @@ function Dashboard() {
           currentTime={currentTime}
         />
       ) : (
-        <Home setUser={setUser} setCurrentTime={setCurrentTime} />
+        <ClayCard>
+          <ClayCard.Body>
+            <Home setUser={setUser} setCurrentTime={setCurrentTime} />
+          </ClayCard.Body>
+        </ClayCard>
       )}
     </div>
   );

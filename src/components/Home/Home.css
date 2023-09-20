@@ -1,0 +1,42 @@
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 0px;
+  padding-right: 20px;
+}
+
+.input-container input {
+  width: 30%;
+  text-align: center;
+}
+
+.input-container button {
+  width: 100%;
+}
+
+form-row {
+  margin-bottom: 10px; /* Adjust as needed for spacing between rows */
+}
+
+/* Style for the checkbox label */
+.label-checkbox {
+  display: flex;
+  align-items: center;
+}
+
+.form-row.select-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-row.select-row label {
+  width: 40%;
+  margin-right: 10px;
+}
+
+.form-row.select-row select {
+  width: 58%;
+}
