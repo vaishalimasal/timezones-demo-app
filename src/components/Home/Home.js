@@ -62,8 +62,8 @@ function Home({ setUser, setCurrentTime }) {
       value: "",
     },
     {
-      label: "New York",
-      value: "America/New_York",
+      label: "India",
+      value: "India",
     },
     {
       label: "London",
@@ -97,9 +97,30 @@ function Home({ setUser, setCurrentTime }) {
     },
   ];
 
+  const timezones = [
+    "India",
+    "Europe/London",
+    "Asia/Tokyo",
+    // Add more timezones here
+  ];
+
   return (
     <div>
       <h1>Welcome to the Timezone App</h1>
+      <div className="timezone-cards">
+        {timezones.map((timezone) => (
+          <ClayCard key={timezone} className="timezone-card">
+            <ClayCard.Body>
+              <h3>{timezone}</h3>
+              <p>
+                {moment()
+                  .tz(timezone)
+                  .format(`${formData.dateFormat} ${formData.timeFormat}`)}
+              </p>
+            </ClayCard.Body>
+          </ClayCard>
+        ))}
+      </div>
       <ClayCard>
         <ClayCard.Body>
           <form onSubmit={handleSubmit}>
